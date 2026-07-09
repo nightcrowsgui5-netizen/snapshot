@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
-    <title>Snapshot - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Snapshot - Fotografia</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -28,40 +28,110 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      .lang-switcher{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1050;
+        display: flex;
+        gap: 8px;
+        background: rgba(0,0,0,.35);
+        padding: 6px;
+        border-radius: 30px;
+        backdrop-filter: blur(4px);
+      }
+      .lang-switcher .lang-btn{
+        width: 34px;
+        height: 24px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        opacity: .55;
+        transition: opacity .2s ease, transform .2s ease;
+        line-height: 0;
+      }
+      .lang-switcher .lang-btn svg{ width: 100%; height: 100%; border-radius: 4px; display:block; }
+      .lang-switcher .lang-btn:hover{ opacity: .9; transform: translateY(-1px); }
+      .lang-switcher .lang-btn.active{
+        opacity: 1;
+        box-shadow: 0 0 0 2px #fff;
+      }
+      @media (max-width: 767.98px){
+        .lang-switcher{ top: 12px; right: 12px; }
+        .lang-switcher .lang-btn{ width: 30px; height: 21px; }
+      }
+    </style>
   </head>
   <body>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher" id="langSwitcher" aria-label="Selecionar idioma">
+      <button type="button" class="lang-btn" data-lang="pt" title="Português (Brasil)" aria-label="Português (Brasil)">
+        <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="20" fill="#009c3b"/>
+          <polygon points="14,2.2 25.5,10 14,17.8 2.5,10" fill="#ffdf00"/>
+          <circle cx="14" cy="10" r="4.4" fill="#002776"/>
+        </svg>
+      </button>
+      <button type="button" class="lang-btn" data-lang="en" title="English" aria-label="English">
+        <svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg">
+          <rect width="28" height="20" fill="#fff"/>
+          <g fill="#b22234">
+            <rect y="0" width="28" height="1.54"/>
+            <rect y="3.08" width="28" height="1.54"/>
+            <rect y="6.15" width="28" height="1.54"/>
+            <rect y="9.23" width="28" height="1.54"/>
+            <rect y="12.31" width="28" height="1.54"/>
+            <rect y="15.38" width="28" height="1.54"/>
+            <rect y="18.46" width="28" height="1.54"/>
+          </g>
+          <rect width="12" height="10.77" fill="#3c3b6e"/>
+          <g fill="#fff">
+            <circle cx="2.5" cy="2" r=".8"/><circle cx="6" cy="2" r=".8"/><circle cx="9.5" cy="2" r=".8"/>
+            <circle cx="4.25" cy="4" r=".8"/><circle cx="7.75" cy="4" r=".8"/>
+            <circle cx="2.5" cy="6" r=".8"/><circle cx="6" cy="6" r=".8"/><circle cx="9.5" cy="6" r=".8"/>
+            <circle cx="4.25" cy="8" r=".8"/><circle cx="7.75" cy="8" r=".8"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+    <!-- End Language Switcher -->
 
 
   	<nav id="navbar" class="navbar">
 		  <ul class="nav-menu">
 		    <li>
 		      <a data-scroll="home" href="#home" class="dot active">
-		        <span>Home</span>
+		        <span data-i18n="nav.home">Início</span>
 		      </a>
 		    </li>
 		    <li>
 		      <a data-scroll="about" href="#about" class="dot">
-		        <span>About</span>
+		        <span data-i18n="nav.about">Sobre</span>
 		      </a>
 		    </li>
 		    <li>
 		      <a data-scroll="services" href="#services" class="dot">
-		        <span>Services</span>
+		        <span data-i18n="nav.services">Serviços</span>
 		      </a>
 		    </li>
 		    <li>
 		      <a data-scroll="work" href="#work" class="dot">
-		        <span>Gallery</span>
+		        <span data-i18n="nav.gallery">Galeria</span>
 		      </a>
 		    </li>
 		    <li>
 		      <a data-scroll="testimonial" href="#testimonial" class="dot">
-		        <span>Testimony</span>
+		        <span data-i18n="nav.testimony">Depoimentos</span>
 		      </a>
 		    </li>
 		    <li>
 		      <a data-scroll="contact" href="#contact" class="dot">
-		        <span>Contact</span>
+		        <span data-i18n="nav.contact">Contato</span>
 		      </a>
 		    </li>
 		  </ul>
@@ -75,10 +145,10 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-lg-7 ftco-animate d-flex align-items-center">
           	<div class="text text-center">
-          		<h1 class="logo"><a href="index.html"><span class="flaticon-camera-shutter"></span>Snapshot<small>Photographer / San Francisco</small></a></h1>
-		  				<h1 class="mb-4">We Make <br>Something Great</h1>
-		  				<p class="mb-4">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts.</p>
-		  				<p class="mt-5"><a href="#" class="btn-custom">Contact us <span class="ion-ios-arrow-round-forward"></span></a></p>
+          		<h1 class="logo"><a href="index.html"><span class="flaticon-camera-shutter"></span>Snapshot<small data-i18n="home.subtitle">Fotógrafo / San Francisco</small></a></h1>
+		  				<h1 class="mb-4" data-i18n="home.title" data-i18n-html>Nós Criamos <br>Algo Incrível</h1>
+		  				<p class="mb-4" data-i18n="home.desc">Capturamos momentos únicos com um olhar criativo e cuidado em cada detalhe, transformando ideias em imagens que contam histórias.</p>
+		  				<p class="mt-5"><a href="#" class="btn-custom"><span data-i18n="home.btn">Fale conosco</span> <span class="ion-ios-arrow-round-forward"></span></a></p>
             </div>
           </div>
         </div>
@@ -104,14 +174,14 @@
     			</div>
     			<div class="col-md-6 col-lg-6 pl-md-5">
 	          <div class="heading-section ftco-animate">
-	            <h2 class="mb-4">Snapshot is A Creative Direction, <br>Photography Agency</h2>
-	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+	            <h2 class="mb-4" data-i18n="about.title" data-i18n-html>Snapshot é uma Agência de Direção <br>Criativa e Fotografia</h2>
+	            <p data-i18n="about.desc">Somos apaixonados por transformar momentos em memórias eternas. Com anos de experiência em fotografia e produção audiovisual, unimos técnica e sensibilidade para entregar imagens que emocionam. Cada projeto é tratado de forma única, do primeiro clique à entrega final, sempre com o compromisso de superar as expectativas dos nossos clientes.</p>
 
 	            <div class="counter-wrap ftco-animate d-flex my-md-4">
 	              <div class="text">
 	              	<p class="mb-4">
 		                <span class="number" data-number="120">0</span>
-		                <span>Project complete</span>
+		                <span data-i18n="about.counter">Projetos concluídos</span>
 	                </p>
 	              </div>
 		          </div>
@@ -120,7 +190,7 @@
 		            <div class="img img-about-2 ml-2" style="background-image: url(images/about-3.jpg);"></div>
 		          </div>
 		          <blockquote class="blockquote mt-5">
-		          	<p class="mb-2">"Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.."</p>
+		          	<p class="mb-2" data-i18n="about.quote">"A fotografia é a única linguagem que pode ser entendida em qualquer lugar do mundo."</p>
 		          	<span>&mdash; Lucy Lee</span>
 		          </blockquote>
 	          </div>
@@ -137,8 +207,8 @@
 		  		<div class="col-md-9">
 		  			<div class="row">
 				  		<div class="col-md-5 heading-section ftco-animate pb-5">
-		            <h2 class="mb-4">Photography Services</h2>
-		            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+		            <h2 class="mb-4" data-i18n="services.title">Serviços de Fotografia</h2>
+		            <p data-i18n="services.desc">Soluções completas em imagem para marcas, eventos e projetos pessoais, com qualidade profissional do início ao fim.</p>
 		          </div>
 				  	</div>
 		  			<div class="row">
@@ -146,8 +216,8 @@
 		        		<div class="media block-6 services d-block ftco-animate">
 		              <div class="icon"><span class="flaticon-video-camera"></span></div>
 		              <div class="media-body">
-		                <h3 class="heading mb-3">Movies &amp; Advertising Videos</h3>
-		                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences.</p>
+		                <h3 class="heading mb-3" data-i18n="services.s1_title">Filmes &amp; Vídeos Publicitários</h3>
+		                <p data-i18n="services.s1_desc">Produzimos filmes e vídeos publicitários que valorizam sua marca e comunicam sua mensagem com impacto e qualidade cinematográfica.</p>
 		              </div>
 		            </div> 
 		        	</div>
@@ -155,8 +225,8 @@
 		        		<div class="media block-6 services d-block ftco-animate">
 		              <div class="icon"><span class="flaticon-video-player"></span></div>
 		              <div class="media-body">
-		                <h3 class="heading mb-3">Clip &amp; Music Videos</h3>
-		                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences.</p>
+		                <h3 class="heading mb-3" data-i18n="services.s2_title">Clipes &amp; Vídeos Musicais</h3>
+		                <p data-i18n="services.s2_desc">Damos vida à música com clipes criativos e envolventes, do conceito à edição final, capturando a essência de cada artista.</p>
 		              </div>
 		            </div> 
 		        	</div>
@@ -164,8 +234,8 @@
 		        		<div class="media block-6 services d-block ftco-animate">
 		              <div class="icon"><span class="flaticon-video-player-1"></span></div>
 		              <div class="media-body">
-		                <h3 class="heading mb-3">Short Film Productions</h3>
-		                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences.</p>
+		                <h3 class="heading mb-3" data-i18n="services.s3_title">Produção de Curtas-Metragens</h3>
+		                <p data-i18n="services.s3_desc">Contamos histórias que emocionam por meio de curtas-metragens com direção, roteiro e produção cuidadosamente elaborados.</p>
 		              </div>
 		            </div> 
 		        	</div>
@@ -180,7 +250,7 @@
         		<div class="row">
 				  		<div class="col-md-4 mb-md-0 mb-4 ftco-animate">
 					      <div class="">
-					        <h2 class="text-center mb-4">Creation</h2>
+					        <h2 class="text-center mb-4" data-i18n="services.creation">Criação</h2>
 
 					        <!-- Progress bar 1 -->
 					        <div class="progress mx-auto" data-value='90'>
@@ -200,7 +270,7 @@
 
 					    <div class="col-md-4 mb-md-0 mb-4 ftco-animate">
 					      <div class="">
-					        <h2 class="text-center mb-4">Development</h2>
+					        <h2 class="text-center mb-4" data-i18n="services.development">Desenvolvimento</h2>
 
 					        <!-- Progress bar 1 -->
 					        <div class="progress mx-auto" data-value='80'>
@@ -220,7 +290,7 @@
 
 					    <div class="col-md-4 mb-md-0 mb-4 ftco-animate">
 					      <div class="">
-					        <h2 class="text-center mb-4">Production</h2>
+					        <h2 class="text-center mb-4" data-i18n="services.production">Produção</h2>
 
 					        <!-- Progress bar 1 -->
 					        <div class="progress mx-auto" data-value='75'>
@@ -240,7 +310,7 @@
 
 					    <div class="p-md-4 mt-4">
 					    	<div class="col-md-8 ftco-animate">
-						    	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast.</p>
+						    	<p data-i18n="services.progress_desc">Do planejamento à entrega, acompanhamos cada etapa do projeto com dedicação, garantindo um resultado à altura da sua expectativa.</p>
 					    	</div>
 					    </div>
 					  </div>
@@ -258,8 +328,8 @@
 		  <div class="container">
 		  	<div class="row justify-content-center">
 		  		<div class="col-md-4 heading-section text-center ftco-animate pb-5">
-            <h2 class="mb-4">Selected Projects</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+            <h2 class="mb-4" data-i18n="work.title">Projetos Selecionados</h2>
+            <p data-i18n="work.desc">Uma seleção dos nossos melhores trabalhos, reunindo diferentes estilos, técnicas e histórias capturadas pelas lentes.</p>
           </div>
 		  	</div>
 		  </div> 
@@ -272,8 +342,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -285,8 +355,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -298,8 +368,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -312,8 +382,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -325,8 +395,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -338,8 +408,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -352,8 +422,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -365,8 +435,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -378,8 +448,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -392,8 +462,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -405,8 +475,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -418,8 +488,8 @@
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span>Nature</span>
-	              	<h2><a href="work-single.html">Beautiful Work</a></h2>
+	              	<span data-i18n="work.category">Natureza</span>
+	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
@@ -433,9 +503,9 @@
 			<div class="container">
 				<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-4 heading-section ftco-animate">
-          	<span class="subheading">Testimony</span>
-            <h2 class="mb-4">Our satisfied customer says</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+          	<span class="subheading" data-i18n="testimony.subheading">Depoimentos</span>
+            <h2 class="mb-4" data-i18n="testimony.title">O que nossos clientes dizem</h2>
+            <p data-i18n="testimony.desc">A confiança de quem já trabalhou conosco é o nosso maior reconhecimento. Veja o que dizem sobre a nossa parceria.</p>
           </div>
         </div>
         <div class="row ftco-animate">
@@ -449,10 +519,10 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line" data-i18n="testimony.quote">Profissionalismo do início ao fim. As imagens superaram todas as nossas expectativas e o atendimento foi impecável. Recomendo de olhos fechados!</p>
                     <div class="pl-5">
 	                    <p class="name">Garreth Smith</p>
-	                    <span class="position">CEO Founder of Commercial Building</span>
+	                    <span class="position" data-i18n="testimony.pos1">CEO e Fundador — Construtora Comercial</span>
                     </div>
                   </div>
                 </div>
@@ -465,10 +535,10 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line" data-i18n="testimony.quote">Profissionalismo do início ao fim. As imagens superaram todas as nossas expectativas e o atendimento foi impecável. Recomendo de olhos fechados!</p>
                     <div class="pl-5">
 	                    <p class="name">Garreth Smith</p>
-	                    <span class="position">CEO Founder of Interior Design</span>
+	                    <span class="position" data-i18n="testimony.pos2">CEO e Fundadora — Design de Interiores</span>
 	                  </div>
                   </div>
                 </div>
@@ -481,10 +551,10 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line" data-i18n="testimony.quote">Profissionalismo do início ao fim. As imagens superaram todas as nossas expectativas e o atendimento foi impecável. Recomendo de olhos fechados!</p>
                     <div class="pl-5">
 	                    <p class="name">Garreth Smith</p>
-	                    <span class="position">Exterior Designer</span>
+	                    <span class="position" data-i18n="testimony.pos3">Designer de Exteriores</span>
 	                  </div>
                   </div>
                 </div>
@@ -497,10 +567,10 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line" data-i18n="testimony.quote">Profissionalismo do início ao fim. As imagens superaram todas as nossas expectativas e o atendimento foi impecável. Recomendo de olhos fechados!</p>
                     <div class="pl-5">
 	                    <p class="name">Garreth Smith</p>
-	                    <span class="position">Landscape Designer</span>
+	                    <span class="position" data-i18n="testimony.pos4">Paisagista</span>
 	                  </div>
                   </div>
                 </div>
@@ -513,10 +583,10 @@
                     </span>
                   </div>
                   <div class="text">
-                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    <p class="mb-5 pl-4 line" data-i18n="testimony.quote">Profissionalismo do início ao fim. As imagens superaram todas as nossas expectativas e o atendimento foi impecável. Recomendo de olhos fechados!</p>
                     <div class="pl-5">
 	                    <p class="name">Garreth Smith</p>
-	                    <span class="position">System Analyst</span>
+	                    <span class="position" data-i18n="testimony.pos5">Analista de Sistemas</span>
 	                  </div>
                   </div>
                 </div>
@@ -532,8 +602,8 @@
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-4 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Contact Me</h2>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.</p>
+            <h2 class="mb-4" data-i18n="contact.title">Fale Comigo</h2>
+            <p data-i18n="contact.desc">Vamos conversar sobre o seu próximo projeto? Entre em contato pelos canais abaixo ou envie uma mensagem.</p>
           </div>
         </div>
 
@@ -544,7 +614,7 @@
           			<span class="icon-map-signs"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Address</h3>
+	          		<h3 class="mb-4" data-i18n="contact.address_title">Endereço</h3>
 		            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
 		          </div>
 	          </div>
@@ -555,7 +625,7 @@
           			<span class="icon-phone2"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Contact Number</h3>
+	          		<h3 class="mb-4" data-i18n="contact.number_title">Telefone</h3>
 		            <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
 	            </div>
 	          </div>
@@ -566,7 +636,7 @@
           			<span class="icon-paper-plane"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Email Address</h3>
+	          		<h3 class="mb-4" data-i18n="contact.email_title">E-mail</h3>
 		            <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
 		          </div>
 	          </div>
@@ -577,7 +647,7 @@
           			<span class="icon-globe"></span>
           		</div>
           		<div>
-	          		<h3 class="mb-4">Website</h3>
+	          		<h3 class="mb-4" data-i18n="contact.website_title">Website</h3>
 		            <p><a href="#">yoursite.com</a></p>
 	            </div>
 	          </div>
@@ -588,19 +658,19 @@
           <div class="col-md-6 ftco-animate">
             <form action="#" class="contact-form p-4 p-md-5 py-md-5">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
+                <input type="text" class="form-control" placeholder="Seu nome" data-i18n-placeholder="form.name">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
+                <input type="text" class="form-control" placeholder="Seu e-mail" data-i18n-placeholder="form.email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
+                <input type="text" class="form-control" placeholder="Assunto" data-i18n-placeholder="form.subject">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Mensagem" data-i18n-placeholder="form.message"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                <input type="submit" value="Enviar Mensagem" class="btn btn-primary py-3 px-5" data-i18n-value="form.send">
               </div>
             </form>
           </div>
@@ -655,5 +725,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>
