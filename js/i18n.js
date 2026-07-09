@@ -1,10 +1,10 @@
-/* Snapshot - Internacionalização (pt-BR padrão / en) */
+/* PollyMaker - Internacionalização (pt-BR padrão / en) */
 (function () {
   "use strict";
 
   var translations = {
     pt: {
-      "title": "Snapshot - Fotografia",
+      "title": "PollyMaker - Fotografia",
       "nav.home": "Início",
       "nav.about": "Sobre",
       "nav.services": "Serviços",
@@ -17,7 +17,7 @@
       "home.desc": "Capturamos momentos únicos com um olhar criativo e cuidado em cada detalhe, transformando ideias em imagens que contam histórias.",
       "home.btn": "Fale conosco",
 
-      "about.title": "Snapshot é uma Agência de Direção <br>Criativa e Fotografia",
+      "about.title": "PollyMaker é uma Agência de Direção <br>Criativa e Fotografia",
       "about.desc": "Somos apaixonados por transformar momentos em memórias eternas. Com anos de experiência em fotografia e produção audiovisual, unimos técnica e sensibilidade para entregar imagens que emocionam. Cada projeto é tratado de forma única, do primeiro clique à entrega final, sempre com o compromisso de superar as expectativas dos nossos clientes.",
       "about.counter": "Projetos concluídos",
       "about.quote": "\"A fotografia é a única linguagem que pode ser entendida em qualquer lugar do mundo.\"",
@@ -65,7 +65,7 @@
     },
 
     en: {
-      "title": "Snapshot - Photography",
+      "title": "PollyMaker - Photography",
       "nav.home": "Home",
       "nav.about": "About",
       "nav.services": "Services",
@@ -78,7 +78,7 @@
       "home.desc": "We capture unique moments with a creative eye and attention to every detail, turning ideas into images that tell stories.",
       "home.btn": "Contact us",
 
-      "about.title": "Snapshot is A Creative Direction, <br>Photography Agency",
+      "about.title": "PollyMaker is A Creative Direction, <br>Photography Agency",
       "about.desc": "We are passionate about turning moments into lasting memories. With years of experience in photography and audiovisual production, we combine technique and sensitivity to deliver images that move people. Every project is treated as unique, from the first click to the final delivery, always committed to exceeding our clients' expectations.",
       "about.counter": "Projects completed",
       "about.quote": "\"Photography is the only language that can be understood anywhere in the world.\"",
