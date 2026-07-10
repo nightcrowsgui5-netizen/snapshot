@@ -13,13 +13,13 @@
       "nav.contact": "Contato",
 
       "home.subtitle": "Fotógrafo / San Francisco",
-      "home.title": "Nós Criamos <br>Algo Incrível",
-      "home.desc": "Capturamos momentos únicos com um olhar criativo e cuidado em cada detalhe, transformando ideias em imagens que contam histórias.",
+      "home.title": "Conteúdo. Imagem. Estratégia. Presença",
+      "home.desc": "Produção visual para marcas, eventos e profissionais que querem se destacar com mais profissionalismo nas redes e fora delas.",
       "home.btn": "Fale conosco",
 
-      "about.title": "PollyMaker é uma Agência de Direção <br>Criativa e Fotografia",
-      "about.desc": "Somos apaixonados por transformar momentos em memórias eternas. Com anos de experiência em fotografia e produção audiovisual, unimos técnica e sensibilidade para entregar imagens que emocionam. Cada projeto é tratado de forma única, do primeiro clique à entrega final, sempre com o compromisso de superar as expectativas dos nossos clientes.",
-      "about.counter": "Projetos concluídos",
+      "about.title": "PollyMaker é sobre imagem, conteúdo e direção criativa",
+      "about.desc": "Eu acredito que uma boa imagem não precisa apenas ser bonita, ela precisa comunicar, conectar e fazer sentido para quem vê.<br><br>Na PollyMaker, cada projeto é pensado com cuidado, desde a ideia até a entrega final. Trabalho com fotografia, vídeos, branding e produção de conteúdo para marcas, profissionais e eventos que querem se apresentar com mais verdade, estética e profissionalismo.<br><br>Cada registro carrega uma intenção: valorizar momentos, fortalecer marcas e transformar ideias em conteúdo visual de qualidade.",
+      "about.counter": "Projetos entregues com propósito",
       "about.quote": "\"A fotografia é a única linguagem que pode ser entendida em qualquer lugar do mundo.\"",
 
       "services.title": "Serviços de Fotografia",
@@ -61,7 +61,8 @@
       "form.email": "Seu e-mail",
       "form.subject": "Assunto",
       "form.message": "Mensagem",
-      "form.send": "Enviar Mensagem"
+      "form.send": "Enviar Mensagem",
+      "footer.copy": "Copyright &copy;2026 Todos os direitos reservados | Site desenvolvido por <a href=\"https://enterdian.com\" target=\"_blank\" rel=\"noopener\">Enterdian.com</a>"
     },
 
     en: {
@@ -74,13 +75,13 @@
       "nav.contact": "Contact",
 
       "home.subtitle": "Photographer / San Francisco",
-      "home.title": "We Make <br>Something Great",
-      "home.desc": "We capture unique moments with a creative eye and attention to every detail, turning ideas into images that tell stories.",
+      "home.title": "Content. Image. Strategy. Presence",
+      "home.desc": "Visual production for brands, events and professionals who want to stand out with more professionalism, on social media and beyond.",
       "home.btn": "Contact us",
 
-      "about.title": "PollyMaker is A Creative Direction, <br>Photography Agency",
-      "about.desc": "We are passionate about turning moments into lasting memories. With years of experience in photography and audiovisual production, we combine technique and sensitivity to deliver images that move people. Every project is treated as unique, from the first click to the final delivery, always committed to exceeding our clients' expectations.",
-      "about.counter": "Projects completed",
+      "about.title": "PollyMaker is about image, content and creative direction",
+      "about.desc": "I believe a good image doesn't just need to be beautiful — it needs to communicate, connect and make sense to those who see it.<br><br>At PollyMaker, every project is carefully crafted, from the idea to the final delivery. I work with photography, video, branding and content production for brands, professionals and events that want to present themselves with more authenticity, aesthetics and professionalism.<br><br>Every shot carries an intention: to value moments, strengthen brands and turn ideas into quality visual content.",
+      "about.counter": "Projects delivered with purpose",
       "about.quote": "\"Photography is the only language that can be understood anywhere in the world.\"",
 
       "services.title": "Photography Services",
@@ -122,7 +123,8 @@
       "form.email": "Your Email",
       "form.subject": "Subject",
       "form.message": "Message",
-      "form.send": "Send Message"
+      "form.send": "Send Message",
+      "footer.copy": "Copyright &copy;2026 All rights reserved | Website developed by <a href=\"https://enterdian.com\" target=\"_blank\" rel=\"noopener\">Enterdian.com</a>"
     }
   };
 
