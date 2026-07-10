@@ -73,6 +73,22 @@
       @media (max-width: 767.98px){
         .logo-img{ width: 85%; max-width: 320px; }
       }
+      /* Slideshow do hero (troca automatica com fade) */
+      .hero-wrap .hero-slideshow{
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        z-index: 0; overflow: hidden;
+      }
+      .hero-wrap .hero-slide{
+        position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1.2s ease-in-out;
+      }
+      .hero-wrap .hero-slide.active{ opacity: 1; }
+      .hero-wrap .overlay{ z-index: 1; }
+      .hero-wrap .container{ position: relative; z-index: 2; }
     </style>
   </head>
   <body>
@@ -148,7 +164,11 @@
 		<!-- End Nav Section -->
 
 		<!-- Start Home Section -->
-		<section id="home" class="hero-wrap js-fullheight" style="background-image: url(images/bg-1.jpg);" data-stellar-background-ratio="0.5">
+		<section id="home" class="hero-wrap js-fullheight">
+      <div class="hero-slideshow">
+        <div class="hero-slide active" style="background-image:url('images/hero-1.png');"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-2.png');"></div>
+      </div>
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
@@ -196,7 +216,7 @@
 		          </div>
 		          <div class="d-flex w-100">
 		            <div class="img img-about-2 mr-2" style="background-image: url(images/about-a.jpg);"></div>
-		            <div class="img img-about-2 ml-2" style="background-image: url(images/about-b.jpg);"></div>
+		            <div class="img img-about-2 ml-2" style="background-image: url(images/about-b.jpg); background-position: center 22%;"></div>
 		          </div>
 		          <blockquote class="blockquote mt-5">
 		          	<p class="mb-2" data-i18n="about.quote">"A fotografia é a única linguagem que pode ser entendida em qualquer lugar do mundo."</p>
@@ -733,5 +753,6 @@
     <script src="js/google-map.js"></script>
     <script src="js/main.js"></script>
     <script src="js/i18n.js"></script>
+    <script src="js/hero-slideshow.js"></script>
   </body>
 </html>
