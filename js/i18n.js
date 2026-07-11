@@ -13,7 +13,7 @@
       "nav.contact": "Contato",
 
       "home.subtitle": "Fotógrafo / San Francisco",
-      "home.title": "Conteúdo. Imagem. Estratégia. Presença",
+      "home.title": "Conteúdo &bull; Imagem &bull; Estratégia &bull; Presença",
       "home.desc": "Produção visual para marcas, eventos e profissionais que querem se destacar com mais profissionalismo nas redes e fora delas.",
       "home.btn": "Fale conosco",
 
@@ -75,7 +75,7 @@
       "nav.contact": "Contact",
 
       "home.subtitle": "Photographer / San Francisco",
-      "home.title": "Content. Image. Strategy. Presence",
+      "home.title": "Content &bull; Image &bull; Strategy &bull; Presence",
       "home.desc": "Visual production for brands, events and professionals who want to stand out with more professionalism, on social media and beyond.",
       "home.btn": "Contact us",
 
