@@ -89,16 +89,14 @@
       .hero-wrap .hero-slide.active{ opacity: 1; }
       .hero-wrap .overlay{ z-index: 1; }
       .hero-wrap .container{ position: relative; z-index: 2; }
-      /* Metodo 4: titulo em estilo "selo" (palavras-chave com separadores) */
+      /* Metodo 4: titulo em estilo "selo" (palavras-chave com separadores), sempre em 1 linha */
       #home .hero-tagline{
-        font-size: 2rem;
+        font-size: clamp(0.7rem, 3.2vw, 1.7rem);
         font-weight: 600;
-        letter-spacing: 5px;
+        letter-spacing: 0.08em;
         text-transform: uppercase;
-        line-height: 1.5;
-      }
-      @media (max-width: 767.98px){
-        #home .hero-tagline{ font-size: 1.1rem; letter-spacing: 3px; }
+        line-height: 1.4;
+        white-space: nowrap;
       }
     </style>
   </head>
