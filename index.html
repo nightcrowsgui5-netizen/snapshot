@@ -144,8 +144,11 @@
         box-shadow: 0 0 0 2px #fff;
       }
       @media (max-width: 767.98px){
-        .lang-switcher{ top: 12px; right: 12px; }
+        /* Mantem as bandeiras fixas no topo (nao rolam com a pagina) */
+        .lang-switcher{ position: fixed !important; top: 12px; right: 12px; z-index: 2000; }
         .lang-switcher .lang-btn{ width: 30px; height: 21px; }
+        /* Esconde o menu lateral de navegacao (pontinhos) no mobile */
+        #navbar{ display: none !important; }
       }
       .logo-img{
         max-width: 440px;
