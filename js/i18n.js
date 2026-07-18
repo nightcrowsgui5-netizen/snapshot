@@ -4,7 +4,7 @@
 
   var translations = {
     pt: {
-      "title": "PollyMaker - Fotografia",
+      "title": "PollyMaker | Criação de Conteúdo, Fotografia e Vídeo — Tuparetama-PE",
       "nav.home": "Início",
       "nav.about": "Sobre",
       "nav.services": "Serviços",
@@ -82,7 +82,7 @@
     },
 
     en: {
-      "title": "PollyMaker - Photography",
+      "title": "PollyMaker | Content Creation, Photography & Video — Tuparetama-PE",
       "nav.home": "Home",
       "nav.about": "About",
       "nav.services": "Services",
