@@ -90,6 +90,25 @@
       .hero-wrap .overlay{ z-index: 1; }
       .hero-wrap .container{ position: relative; z-index: 2; }
       /* Logo em video: "screen" faz o fundo preto sumir sobre o hero escuro */
+      /* Abas da galeria */
+      .gallery-tabs{
+        list-style: none; padding: 0; margin: 0 0 40px;
+        display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px;
+      }
+      .gallery-tabs .gallery-tab{
+        cursor: pointer;
+        padding: 8px 20px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #8c8c8c;
+        border-bottom: 2px solid transparent;
+        transition: color .25s ease, border-color .25s ease;
+        user-select: none;
+      }
+      .gallery-tabs .gallery-tab:hover{ color: #ff8b00; }
+      .gallery-tabs .gallery-tab.active{ color: #fff; border-bottom-color: #ff8b00; }
       .logo-video{
         max-width: 480px;
         width: 78%;
@@ -215,7 +234,8 @@
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
 	    				<div class="img img-video d-flex align-self-stretch align-items-center" style="background-image:url(images/CRIADA.png); background-position: top center;">
-	    					<div class="video justify-content-center">
+	    					<!-- Botao de video popup escondido a pedido; remova o display:none e ajuste o href do vimeo para reativar -->
+	    					<div class="video justify-content-center" style="display:none;">
 									<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
 										<span class="ion-ios-play"></span>
 			  					</a>
@@ -375,7 +395,7 @@
 		<!-- End Services Section -->
 
 		<!-- Start Testimonials Section -->
-		<section id="work" class="ftco-section">
+				<section id="work" class="ftco-section">
 		  <div class="container">
 		  	<div class="row justify-content-center">
 		  		<div class="col-md-4 heading-section text-center ftco-animate pb-5">
@@ -383,163 +403,171 @@
             <p data-i18n="work.desc">Uma seleção dos nossos melhores trabalhos, reunindo diferentes estilos, técnicas e histórias capturadas pelas lentes.</p>
           </div>
 		  	</div>
+		  	<div class="row justify-content-center">
+		  		<div class="col-md-12 text-center">
+		  			<ul class="gallery-tabs">
+		  				<li class="gallery-tab active" data-cat="casamentos" data-i18n="work.tab_casamentos">Casamentos</li>
+		  				<li class="gallery-tab" data-cat="aniversarios" data-i18n="work.tab_aniversarios">Aniversários</li>
+		  				<li class="gallery-tab" data-cat="eventos" data-i18n="work.tab_eventos">Eventos</li>
+		  				<li class="gallery-tab" data-cat="batizados" data-i18n="work.tab_batizados">Batizados</li>
+		  				<li class="gallery-tab" data-cat="lojas" data-i18n="work.tab_lojas">Lojas</li>
+		  			</ul>
+		  		</div>
+		  	</div>
 		  </div> 
 		  <div class="container-fluid px-md-0">
         <div class="row no-gutters">
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="casamentos">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-1.jpg);">
             	<a href="images/model-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_casamento">Casamento</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="casamentos">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-2.jpg);">
             	<a href="images/model-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_casamento">Casamento</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="casamentos">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-3.jpg);">
             	<a href="images/model-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_casamento">Casamento</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="aniversarios">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-4.jpg);">
             	<a href="images/model-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_aniversario">Aniversário</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="aniversarios">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-5.jpg);">
             	<a href="images/model-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_aniversario">Aniversário</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="eventos">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-6.jpg);">
             	<a href="images/model-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_evento">Evento</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="eventos">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-7.jpg);">
             	<a href="images/model-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_evento">Evento</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="eventos">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-8.jpg);">
             	<a href="images/model-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_evento">Evento</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="batizados">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-9.jpg);">
             	<a href="images/model-9.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_batizado">Batizado</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="batizados">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-10.jpg);">
             	<a href="images/model-10.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_batizado">Batizado</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="lojas">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-11.jpg);">
             	<a href="images/model-11.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_loja">Loja</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
             </div>
           </div>
-          <div class="col-md-4 ftco-animate">
+          <div class="col-md-4 gallery-item ftco-animate" data-cat="lojas">
             <div class="model img d-flex align-items-end" style="background-image: url(images/model-12.jpg);">
             	<a href="images/model-12.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
             	<div class="desc w-100 px-4">
 	              <div class="text w-100 mb-3">
-	              	<span data-i18n="work.category">Natureza</span>
+	              	<span data-i18n="work.cat_loja">Loja</span>
 	              	<h2><a href="work-single.html" data-i18n="work.item">Belo Trabalho</a></h2>
 	              </div>
               </div>
@@ -776,5 +804,6 @@
     <script src="js/main.js"></script>
     <script src="js/i18n.js"></script>
     <script src="js/hero-slideshow.js"></script>
+    <script src="js/gallery.js"></script>
   </body>
 </html>

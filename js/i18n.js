@@ -39,6 +39,16 @@
       "work.desc": "Uma seleção dos nossos melhores trabalhos, reunindo diferentes estilos, técnicas e histórias capturadas pelas lentes.",
       "work.category": "Natureza",
       "work.item": "Belo Trabalho",
+      "work.tab_casamentos": "Casamentos",
+      "work.tab_aniversarios": "Aniversários",
+      "work.tab_eventos": "Eventos",
+      "work.tab_batizados": "Batizados",
+      "work.tab_lojas": "Lojas",
+      "work.cat_casamento": "Casamento",
+      "work.cat_aniversario": "Aniversário",
+      "work.cat_evento": "Evento",
+      "work.cat_batizado": "Batizado",
+      "work.cat_loja": "Loja",
 
       "testimony.subheading": "Depoimentos",
       "testimony.title": "O que nossos clientes dizem",
@@ -101,6 +111,16 @@
       "work.desc": "A selection of our best work, bringing together different styles, techniques and stories captured through the lens.",
       "work.category": "Nature",
       "work.item": "Beautiful Work",
+      "work.tab_casamentos": "Weddings",
+      "work.tab_aniversarios": "Birthdays",
+      "work.tab_eventos": "Events",
+      "work.tab_batizados": "Baptisms",
+      "work.tab_lojas": "Stores",
+      "work.cat_casamento": "Wedding",
+      "work.cat_aniversario": "Birthday",
+      "work.cat_evento": "Event",
+      "work.cat_batizado": "Baptism",
+      "work.cat_loja": "Store",
 
       "testimony.subheading": "Testimony",
       "testimony.title": "What our clients say",
@@ -176,7 +196,9 @@
         setLang(btn.getAttribute("data-lang"));
       });
     });
-    setLang(getLang());
+    // Sempre inicia em portugues ao entrar no site (ignora escolha anterior);
+    // o seletor de bandeiras continua trocando o idioma durante a navegacao.
+    setLang(DEFAULT_LANG);
   }
 
   if (document.readyState === "loading") {
