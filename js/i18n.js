@@ -55,6 +55,8 @@
       "work.cat_corporativo": "Corporativo",
       "work.cat_comercial": "Comercial",
       "work.cat_socialmedia": "Social Media",
+      "work.tab_fotografia": "Fotografia",
+      "work.cat_fotografia": "Fotografia",
 
       "testimony.subheading": "Depoimentos",
       "testimony.title": "O que nossos clientes dizem",
@@ -133,6 +135,8 @@
       "work.cat_corporativo": "Corporate",
       "work.cat_comercial": "Commercial",
       "work.cat_socialmedia": "Social Media",
+      "work.tab_fotografia": "Photography",
+      "work.cat_fotografia": "Photography",
 
       "testimony.subheading": "Testimony",
       "testimony.title": "What our clients say",
