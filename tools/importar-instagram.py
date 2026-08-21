@@ -62,11 +62,37 @@ def otimizar(caminho, largura_max=1400):
     return im.size
 
 
-def item_html(arquivo, categoria, titulo, url_post):
+def fim_do_ultimo_item(s):
+    """Posição logo após o último item da galeria.
+
+    Procurar por um fecha-div solto não serve: a indentação varia e o item
+    acaba inserido fora da grade (e quebra a linha). Aqui achamos o último
+    item e contamos a abertura/fechamento de div até ele fechar de verdade.
+    """
+    i = s.rindex('<div class="col-md-4 gallery-item')
+    profundidade, pos = 0, i
+    while True:
+        abre = s.find("<div", pos)
+        fecha = s.find("</div>", pos)
+        if fecha == -1:
+            raise SystemExit("Não consegui achar o fim da galeria em index.html")
+        if abre != -1 and abre < fecha:
+            profundidade += 1
+            pos = abre + 4
+        else:
+            profundidade -= 1
+            pos = fecha + 6
+            if profundidade == 0:
+                # inclui o fim de linha, para o próximo item começar limpo
+                return pos + 1 if s[pos:pos + 1] == "\n" else pos
+
+
+def item_html(arquivo, categoria, titulo, url_post, inteira=True):
     chave, rotulo = ROTULOS[categoria]
+    classe = "model img ig-inteira" if inteira else "model img"
     return (
         '          <div class="col-md-4 gallery-item ftco-animate" data-cat="%s">\n'
-        '            <div class="model img d-flex align-items-end" style="background-image: url(images/%s);">\n'
+        '            <div class="%s d-flex align-items-end" style="background-image: url(images/%s);">\n'
         '            	<a href="%s" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">\n'
         '	    					<span class="icon-instagram"></span>\n'
         '	    				</a>\n'
@@ -78,7 +104,7 @@ def item_html(arquivo, categoria, titulo, url_post):
         '              </div>\n'
         '            </div>\n'
         '          </div>\n'
-    ) % (categoria, arquivo, url_post, chave, rotulo, url_post, html.escape(titulo))
+    ) % (categoria, classe, arquivo, url_post, chave, rotulo, url_post, html.escape(titulo))
 
 
 def main():
@@ -90,9 +116,19 @@ def main():
 
     print("Lendo o post %s ..." % codigo)
     pagina = buscar(url_post)
-    url_img = meta(pagina, "og:image")
-    if not url_img:
-        sys.exit("Não achei a imagem de capa. O post pode estar privado ou removido.")
+
+    # A imagem de og:image vem CORTADA em quadrado pelo Instagram. O endpoint
+    # /media/?size=l entrega a imagem inteira e bem maior, então tentamos ele
+    # primeiro e só caímos na miniatura se falhar.
+    url_img = url_post + "media/?size=l"
+    try:
+        buscar(url_img, headers={"User-Agent": "Mozilla/5.0"}, binario=True)
+        print("  usando a imagem inteira (/media/?size=l)")
+    except Exception:
+        url_img = meta(pagina, "og:image")
+        print("  aviso: imagem inteira indisponível, usando a miniatura quadrada")
+        if not url_img:
+            sys.exit("Não achei a imagem. O post pode estar privado ou removido.")
 
     autor = (meta(pagina, "og:title") or "").split(" on Instagram")[0].strip()
     legenda = meta(pagina, "og:title") or ""
@@ -117,9 +153,8 @@ def main():
     tamanho = otimizar(destino)
     kb = os.path.getsize(destino) / 1024
     print("  images/%s  %s  %.0f KB" % (arquivo, "x".join(map(str, tamanho or ())), kb))
-    if tamanho and min(tamanho) < 800:
-        print("  ATENÇÃO: %dx%d é pequeno para a galeria. O Instagram só libera a\n"
-              "  miniatura de compartilhamento publicamente. Para ficar nítido,\n"
+    if tamanho and tamanho[0] < 700:
+        print("  ATENÇÃO: %dx%d é pequeno para a galeria. Para ficar nítido,\n"
               "  substitua images/%s pelo arquivo original." % (tamanho[0], tamanho[1], arquivo))
 
     caminho_html = os.path.join(RAIZ, "index.html")
@@ -127,9 +162,7 @@ def main():
     if arquivo in s:
         sys.exit("Esse post já está na galeria (images/%s)." % arquivo)
 
-    fim_galeria = "        </div>\n      </div>\n"
-    i = s.index('<div class="row no-gutters">')
-    j = s.index(fim_galeria, i)
+    j = fim_do_ultimo_item(s)
     s = s[:j] + item_html(arquivo, categoria, titulo, url_post) + s[j:]
     io.open(caminho_html, "w", encoding="utf-8").write(s)
 

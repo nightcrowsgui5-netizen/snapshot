@@ -197,6 +197,17 @@
       }
       .gallery-tabs .gallery-tab:hover{ color: #ff8b00; }
       .gallery-tabs .gallery-tab.active{ color: #fff; border-bottom-color: #ff8b00; }
+
+      /* Itens importados do Instagram: mostra a imagem INTEIRA, sem corte.
+         O Instagram entrega formatos variados (quadrado, retrato, paisagem) e
+         o espaço da galeria é vertical — sem isto, a imagem seria ampliada e
+         cortada nas laterais. */
+      .gallery-item .model.ig-inteira{
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #000;
+      }
       .logo-video{
         max-width: 480px;
         width: 78%;
@@ -665,7 +676,7 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="fotografia">
-            <div class="model img d-flex align-items-end" style="background-image: url(images/ig-DcPLrMXvWVU.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DcPLrMXvWVU.jpg);">
             	<a href="https://www.instagram.com/p/DcPLrMXvWVU/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -674,6 +685,12 @@
 	              	<span data-i18n="work.cat_fotografia">Fotografia</span>
 	              	<h2><a href="https://www.instagram.com/p/DcPLrMXvWVU/" target="_blank" rel="noopener">Turma TR069 Avançado</a></h2>
 	              </div>
+              </div>
+            </div>
+          </div>
+              </div>
+            </div>
+          </div>
               </div>
             </div>
           </div>
