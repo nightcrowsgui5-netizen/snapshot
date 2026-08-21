@@ -5,7 +5,10 @@ Baixa a imagem de capa do post, guarda em images/ e insere o item na galeria
 com o clique levando ao post no Instagram.
 
 Uso:
-    python3 tools/importar-instagram.py <url-do-post> <categoria> ["Título"]
+    python3 tools/importar-instagram.py <url-do-post> <categoria> ["Título"] [--girar=90]
+
+--girar gira a imagem em graus no sentido anti-horário. Use quando a capa do
+reel vier tombada (acontece com vídeo gravado na horizontal).
 
 Categorias: eventos, corporativo, comercial, socialmedia, fotografia
 
@@ -48,14 +51,21 @@ def codigo_do_post(url):
     return m.group(1)
 
 
-def otimizar(caminho, largura_max=1400):
-    """Reduz e recomprime para não pesar na página. Nunca amplia."""
+def otimizar(caminho, largura_max=1400, girar=0):
+    """Reduz e recomprime para não pesar na página. Nunca amplia.
+
+    girar: graus no sentido anti-horário. Capas de reel gravado na horizontal
+    costumam vir tombadas, porque a rotação fica nos metadados do vídeo e o
+    Instagram não a aplica ao exportar o quadro.
+    """
     try:
         from PIL import Image, ImageOps
     except ImportError:
         print("  aviso: Pillow não instalado, imagem salva sem otimizar")
         return
     im = ImageOps.exif_transpose(Image.open(caminho)).convert("RGB")
+    if girar:
+        im = im.rotate(girar, expand=True)
     if im.width > largura_max:
         im.thumbnail((largura_max, largura_max * 4), Image.LANCZOS)
     im.save(caminho, "JPEG", quality=84, optimize=True, progressive=True)
@@ -108,9 +118,14 @@ def item_html(arquivo, categoria, titulo, url_post, inteira=True):
 
 
 def main():
-    if len(sys.argv) < 3 or sys.argv[2] not in ROTULOS:
+    args = [a for a in sys.argv[1:] if not a.startswith("--girar")]
+    girar = 0
+    for a in sys.argv[1:]:
+        if a.startswith("--girar"):
+            girar = int(a.split("=")[1]) if "=" in a else 90
+    if len(args) < 2 or args[1] not in ROTULOS:
         sys.exit(__doc__)
-    url_post, categoria = sys.argv[1].split("?")[0], sys.argv[2]
+    url_post, categoria = args[0].split("?")[0], args[1]
     codigo = codigo_do_post(url_post)
     url_post = "https://www.instagram.com/p/%s/" % codigo
 
@@ -135,8 +150,8 @@ def main():
     m = re.search(r'"(.*)', legenda, re.S)
     legenda = (m.group(1) if m else legenda).strip().strip('"')
 
-    if len(sys.argv) > 3:
-        titulo = sys.argv[3]
+    if len(args) > 2:
+        titulo = args[2]
     else:
         # legenda de Instagram costuma ser longa demais para caber no card:
         # corta na primeira frase e, se ainda for grande, na última palavra inteira
@@ -150,7 +165,7 @@ def main():
     print("Baixando a imagem ...")
     with open(destino, "wb") as f:
         f.write(buscar(url_img, headers={"User-Agent": "Mozilla/5.0"}, binario=True))
-    tamanho = otimizar(destino)
+    tamanho = otimizar(destino, girar=girar)
     kb = os.path.getsize(destino) / 1024
     print("  images/%s  %s  %.0f KB" % (arquivo, "x".join(map(str, tamanho or ())), kb))
     if tamanho:
