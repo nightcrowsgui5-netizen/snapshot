@@ -5,10 +5,12 @@ Baixa a imagem de capa do post, guarda em images/ e insere o item na galeria
 com o clique levando ao post no Instagram.
 
 Uso:
-    python3 tools/importar-instagram.py <url-do-post> <categoria> ["Título"] [--girar=90]
+    python3 tools/importar-instagram.py <url-do-post> <categoria> ["Título"] [--girar=90] [--vertical]
 
---girar gira a imagem em graus no sentido anti-horário. Use quando a capa do
-reel vier tombada (acontece com vídeo gravado na horizontal).
+--girar    gira a imagem em graus no sentido anti-horário. Use quando a capa
+           do reel vier tombada (vídeo gravado na horizontal).
+--vertical recorta uma imagem deitada no formato vertical da galeria, para não
+           sobrar faixa preta. Aceita o ponto de corte: --vertical=700.
 
 Categorias: eventos, corporativo, comercial, socialmedia, fotografia
 
@@ -51,7 +53,25 @@ def codigo_do_post(url):
     return m.group(1)
 
 
-def otimizar(caminho, largura_max=1400, girar=0):
+PROPORCAO_GALERIA = 480.0 / 600.0  # o espaço de cada item é 480x600
+
+
+def recortar_vertical(im, deslocamento=None):
+    """Recorta uma imagem deitada no formato vertical da galeria.
+
+    Imagem deitada exibida inteira num espaço vertical sobra faixa preta em
+    cima e embaixo e fica pequena. Aqui pegamos a altura toda e a maior
+    largura possível na proporção do espaço.
+    """
+    largura = int(im.height * PROPORCAO_GALERIA)
+    if largura >= im.width:
+        return im  # já é vertical, nada a recortar
+    x = (im.width - largura) // 2 if deslocamento is None else deslocamento
+    x = max(0, min(x, im.width - largura))
+    return im.crop((x, 0, x + largura, im.height))
+
+
+def otimizar(caminho, largura_max=1400, girar=0, vertical=False, deslocamento=None):
     """Reduz e recomprime para não pesar na página. Nunca amplia.
 
     girar: graus no sentido anti-horário. Capas de reel gravado na horizontal
@@ -66,6 +86,11 @@ def otimizar(caminho, largura_max=1400, girar=0):
     im = ImageOps.exif_transpose(Image.open(caminho)).convert("RGB")
     if girar:
         im = im.rotate(girar, expand=True)
+    if vertical:
+        antes = im.size
+        im = recortar_vertical(im, deslocamento)
+        if im.size != antes:
+            print("  recortada no vertical: %dx%d -> %dx%d" % (antes + im.size))
     if im.width > largura_max:
         im.thumbnail((largura_max, largura_max * 4), Image.LANCZOS)
     im.save(caminho, "JPEG", quality=84, optimize=True, progressive=True)
@@ -118,11 +143,15 @@ def item_html(arquivo, categoria, titulo, url_post, inteira=True):
 
 
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith("--girar")]
-    girar = 0
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    girar, vertical, deslocamento = 0, False, None
     for a in sys.argv[1:]:
         if a.startswith("--girar"):
             girar = int(a.split("=")[1]) if "=" in a else 90
+        elif a.startswith("--vertical"):
+            vertical = True
+            if "=" in a:
+                deslocamento = int(a.split("=")[1])
     if len(args) < 2 or args[1] not in ROTULOS:
         sys.exit(__doc__)
     url_post, categoria = args[0].split("?")[0], args[1]
@@ -165,7 +194,7 @@ def main():
     print("Baixando a imagem ...")
     with open(destino, "wb") as f:
         f.write(buscar(url_img, headers={"User-Agent": "Mozilla/5.0"}, binario=True))
-    tamanho = otimizar(destino, girar=girar)
+    tamanho = otimizar(destino, girar=girar, vertical=vertical, deslocamento=deslocamento)
     kb = os.path.getsize(destino) / 1024
     print("  images/%s  %s  %.0f KB" % (arquivo, "x".join(map(str, tamanho or ())), kb))
     if tamanho:
