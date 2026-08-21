@@ -19,7 +19,6 @@
       "about.title": "PollyMaker é sobre imagem, conteúdo e direção criativa",
       "about.desc": "Eu acredito que uma boa imagem não precisa apenas ser bonita, ela precisa comunicar, conectar e fazer sentido para quem vê.<br><br>Na PollyMaker, cada projeto é pensado com cuidado, desde a ideia até a entrega final. Trabalho com fotografia, vídeos, branding e produção de conteúdo para marcas, profissionais e eventos que querem se apresentar com mais verdade, estética e profissionalismo.<br><br>Cada registro carrega uma intenção: valorizar momentos, fortalecer marcas e transformar ideias em conteúdo visual de qualidade.",
       "about.counter": "meses de estrada no audiovisual, transformando ideias em imagem",
-      "about.quote": "\"A fotografia é a única linguagem que pode ser entendida em qualquer lugar do mundo.\"",
 
       "services.title": "Imagem, Conteúdo e Direção Criativa",
       "services.desc": "Soluções completas em imagem para marcas, eventos e projetos pessoais, com qualidade profissional do início ao fim.",
@@ -83,7 +82,6 @@
       "about.title": "PollyMaker is about image, content and creative direction",
       "about.desc": "I believe a good image doesn't just need to be beautiful — it needs to communicate, connect and make sense to those who see it.<br><br>At PollyMaker, every project is carefully crafted, from the idea to the final delivery. I work with photography, video, branding and content production for brands, professionals and events that want to present themselves with more authenticity, aesthetics and professionalism.<br><br>Every shot carries an intention: to value moments, strengthen brands and turn ideas into quality visual content.",
       "about.counter": "months in audiovisual, turning ideas into image",
-      "about.quote": "\"Photography is the only language that can be understood anywhere in the world.\"",
 
       "services.title": "Image, Content and Creative Direction",
       "services.desc": "Complete image solutions for brands, events and personal projects, with professional quality from start to finish.",
