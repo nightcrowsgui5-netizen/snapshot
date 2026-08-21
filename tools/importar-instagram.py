@@ -122,12 +122,20 @@ def fim_do_ultimo_item(s):
                 return pos + 1 if s[pos:pos + 1] == "\n" else pos
 
 
-def item_html(arquivo, categoria, titulo, url_post, inteira=True):
+def item_html(arquivo, categoria, titulo, url_post, inteira=True, tamanho=None):
+    """Monta o item da galeria.
+
+    A imagem entra como <img> de verdade, e não como fundo de CSS, porque o
+    Google Imagens não indexa fundo de CSS. O alt descreve o trabalho.
+    """
     chave, rotulo = ROTULOS[categoria]
     classe = "model img ig-inteira" if inteira else "model img"
+    alt = "%s — %s | PollyMaker, Tuparetama-PE" % (titulo, rotulo)
+    dims = ' width="%d" height="%d"' % tamanho if tamanho else ""
     return (
         '          <div class="col-md-4 gallery-item ftco-animate" data-cat="%s">\n'
-        '            <div class="%s d-flex align-items-end" style="background-image: url(images/%s);">\n'
+        '            <div class="%s d-flex align-items-end">\n'
+        '            	<img class="model-img" src="images/%s" alt="%s"%s loading="lazy" decoding="async">\n'
         '            	<a href="%s" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">\n'
         '	    					<span class="icon-instagram"></span>\n'
         '	    				</a>\n'
@@ -139,7 +147,8 @@ def item_html(arquivo, categoria, titulo, url_post, inteira=True):
         '              </div>\n'
         '            </div>\n'
         '          </div>\n'
-    ) % (categoria, classe, arquivo, url_post, chave, rotulo, url_post, html.escape(titulo))
+    ) % (categoria, classe, arquivo, html.escape(alt, quote=True), dims,
+         url_post, chave, rotulo, url_post, html.escape(titulo))
 
 
 def main():
@@ -220,7 +229,7 @@ def main():
         sys.exit("Esse post já está na galeria (images/%s)." % arquivo)
 
     j = fim_do_ultimo_item(s)
-    s = s[:j] + item_html(arquivo, categoria, titulo, url_post) + s[j:]
+    s = s[:j] + item_html(arquivo, categoria, titulo, url_post, tamanho=tamanho) + s[j:]
     io.open(caminho_html, "w", encoding="utf-8").write(s)
 
     print('\nPronto. Item "%s" adicionado à aba %s.' % (titulo, ROTULOS[categoria][1]))

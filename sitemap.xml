@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.pollymaker.com.br/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/model-10.jpg</image:loc>
+      <image:title>Belo Trabalho — Social Media</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/model-11.jpg</image:loc>
+      <image:title>Belo Trabalho — Social Media</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/model-12.jpg</image:loc>
+      <image:title>Belo Trabalho — Social Media</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/foto-1.jpg</image:loc>
+      <image:title>Belo Trabalho — Fotografia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DcPLrMXvWVU.jpg</image:loc>
+      <image:title>Turma TR069 Avançado — Fotografia</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DTLYqiqDow1.jpg</image:loc>
+      <image:title>Te amo, Minha Esposa — Evento</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DTx4E3Mkcu0P8yKEISR0xVGwY43TSB_0qTODKg0.jpg</image:loc>
+      <image:title>Batismo de Mariana — Evento</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DXEzZn6APuDkZgEgyz1Qij2Y87Q_L7enuI8CZs0.jpg</image:loc>
+      <image:title>Robson e Brenda — Evento</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DbFzqezxWHq.jpg</image:loc>
+      <image:title>Oftalmo São José — Corporativo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DZADCIbz3VD.jpg</image:loc>
+      <image:title>Silane Almeida — Espaço de Beleza — Comercial</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-Db0WDo6ipVJ.jpg</image:loc>
+      <image:title>Mix Bom — Dia dos Pais — Comercial</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DWpMHQURSLA.jpg</image:loc>
+      <image:title>Moda Fitness — Comercial</image:title>
+    </image:image>
   </url>
 </urlset>

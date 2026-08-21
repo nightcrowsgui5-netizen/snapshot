@@ -208,16 +208,23 @@
       .gallery-tabs .gallery-tab:hover{ color: #ff8b00; }
       .gallery-tabs .gallery-tab.active{ color: #fff; border-bottom-color: #ff8b00; }
 
-      /* Itens importados do Instagram: mostra a imagem INTEIRA, sem corte.
-         O Instagram entrega formatos variados (quadrado, retrato, paisagem) e
-         o espaço da galeria é vertical — sem isto, a imagem seria ampliada e
-         cortada nas laterais. */
-      .gallery-item .model.ig-inteira{
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: #000;
+      /* A galeria usa <img> de verdade, e não fundo de CSS, porque o Google
+         Imagens não indexa fundo de CSS. O object-fit reproduz exatamente o
+         comportamento que o background tinha, então nada muda na tela. */
+      .gallery-item .model > img.model-img{
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        /* o fundo original alinhava ao topo (background-position: 50% 0%),
+           e o object-fit centraliza por padrão: sem isto o corte muda */
+        object-position: 50% 0%;
+        z-index: 0;
       }
+      /* Itens do Instagram: mostra a imagem INTEIRA, sem corte, porque o
+         formato varia (quadrado, retrato, paisagem) e o espaço é vertical. */
+      .gallery-item .model.ig-inteira{ background-color: #000; }
+      .gallery-item .model.ig-inteira > img.model-img{ object-fit: contain; }
       .logo-video{
         max-width: 480px;
         width: 78%;
@@ -311,8 +318,8 @@
 		<!-- Start Home Section -->
 		<section id="home" class="hero-wrap js-fullheight">
       <div class="hero-slideshow">
-        <div class="hero-slide active" style="background-image:url('images/hero-1.png');"></div>
-        <div class="hero-slide" style="background-image:url('images/hero-2.png');"></div>
+        <div class="hero-slide active" style="background-image:url('images/hero-1.jpg');"></div>
+        <div class="hero-slide" style="background-image:url('images/hero-2.jpg');"></div>
       </div>
       <div class="overlay"></div>
       <div class="container">
@@ -337,7 +344,7 @@
     			<div class="col-md-6 col-lg-6 d-flex">
     				<div class="img-about img d-flex align-items-stretch">
     					<div class="overlay"></div>
-	    				<div class="img img-video d-flex align-self-stretch align-items-center" style="background-image:url(images/CRIADA.png); background-position: top center;">
+	    				<div class="img img-video d-flex align-self-stretch align-items-center" style="background-image:url(images/CRIADA.jpg); background-position: top center;">
 	    					<!-- Botao de video popup escondido a pedido; remova o display:none e ajuste o href do vimeo para reativar -->
 	    					<div class="video justify-content-center" style="display:none;">
 									<a href="https://vimeo.com/45830194" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
@@ -517,7 +524,8 @@
 		  <div class="container-fluid px-md-0">
         <div class="row no-gutters">
           <div class="col-md-4 gallery-item ftco-animate" data-cat="socialmedia">
-            <div class="model img d-flex align-items-end" style="background-image: url(images/model-10.jpg);">
+            <div class="model img d-flex align-items-end">
+            	<img class="model-img" src="images/model-10.jpg" alt="Belo Trabalho — Social Media | PollyMaker, Tuparetama-PE" width="1000" height="1498" loading="lazy" decoding="async">
             	<a href="images/model-10.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
@@ -530,7 +538,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="socialmedia">
-            <div class="model img d-flex align-items-end" style="background-image: url(images/model-11.jpg);">
+            <div class="model img d-flex align-items-end">
+            	<img class="model-img" src="images/model-11.jpg" alt="Belo Trabalho — Social Media | PollyMaker, Tuparetama-PE" width="1280" height="1920" loading="lazy" decoding="async">
             	<a href="images/model-11.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
@@ -543,7 +552,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="socialmedia">
-            <div class="model img d-flex align-items-end" style="background-image: url(images/model-12.jpg);">
+            <div class="model img d-flex align-items-end">
+            	<img class="model-img" src="images/model-12.jpg" alt="Belo Trabalho — Social Media | PollyMaker, Tuparetama-PE" width="1280" height="1920" loading="lazy" decoding="async">
             	<a href="images/model-12.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
@@ -556,7 +566,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="fotografia">
-            <div class="model img d-flex align-items-end" style="background-image: url(images/foto-1.jpg);">
+            <div class="model img d-flex align-items-end">
+            	<img class="model-img" src="images/foto-1.jpg" alt="Belo Trabalho — Fotografia | PollyMaker, Tuparetama-PE" width="1000" height="1173" loading="lazy" decoding="async">
             	<a href="images/foto-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
@@ -569,7 +580,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="fotografia">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DcPLrMXvWVU.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DcPLrMXvWVU.jpg" alt="Turma TR069 Avançado — Fotografia | PollyMaker, Tuparetama-PE" width="1080" height="571" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DcPLrMXvWVU/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -582,7 +594,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="eventos">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DTLYqiqDow1.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DTLYqiqDow1.jpg" alt="Te amo, Minha Esposa — Evento | PollyMaker, Tuparetama-PE" width="540" height="960" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DTLYqiqDow1/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -595,7 +608,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="eventos">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DTx4E3Mkcu0P8yKEISR0xVGwY43TSB_0qTODKg0.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DTx4E3Mkcu0P8yKEISR0xVGwY43TSB_0qTODKg0.jpg" alt="Batismo de Mariana — Evento | PollyMaker, Tuparetama-PE" width="640" height="1136" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DTx4E3Mkcu0P8yKEISR0xVGwY43TSB_0qTODKg0/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -608,7 +622,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="eventos">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DXEzZn6APuDkZgEgyz1Qij2Y87Q_L7enuI8CZs0.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DXEzZn6APuDkZgEgyz1Qij2Y87Q_L7enuI8CZs0.jpg" alt="Robson e Brenda — Evento | PollyMaker, Tuparetama-PE" width="640" height="1136" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DXEzZn6APuDkZgEgyz1Qij2Y87Q_L7enuI8CZs0/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -621,7 +636,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="corporativo">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DbFzqezxWHq.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DbFzqezxWHq.jpg" alt="Oftalmo São José — Corporativo | PollyMaker, Tuparetama-PE" width="640" height="1136" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DbFzqezxWHq/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -634,7 +650,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="comercial">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DZADCIbz3VD.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DZADCIbz3VD.jpg" alt="Silane Almeida — Espaço de Beleza — Comercial | PollyMaker, Tuparetama-PE" width="640" height="1136" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DZADCIbz3VD/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -647,7 +664,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="comercial">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-Db0WDo6ipVJ.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-Db0WDo6ipVJ.jpg" alt="Mix Bom — Dia dos Pais — Comercial | PollyMaker, Tuparetama-PE" width="864" height="1080" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/Db0WDo6ipVJ/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
@@ -660,7 +678,8 @@
             </div>
           </div>
           <div class="col-md-4 gallery-item ftco-animate" data-cat="comercial">
-            <div class="model img ig-inteira d-flex align-items-end" style="background-image: url(images/ig-DWpMHQURSLA.jpg);">
+            <div class="model img ig-inteira d-flex align-items-end">
+            	<img class="model-img" src="images/ig-DWpMHQURSLA.jpg" alt="Moda Fitness — Comercial | PollyMaker, Tuparetama-PE" width="640" height="1136" loading="lazy" decoding="async">
             	<a href="https://www.instagram.com/p/DWpMHQURSLA/" target="_blank" rel="noopener" aria-label="Ver no Instagram" class="icon d-flex justify-content-center align-items-center">
 	    					<span class="icon-instagram"></span>
 	    				</a>
