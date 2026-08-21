@@ -153,9 +153,22 @@ def main():
     tamanho = otimizar(destino)
     kb = os.path.getsize(destino) / 1024
     print("  images/%s  %s  %.0f KB" % (arquivo, "x".join(map(str, tamanho or ())), kb))
-    if tamanho and tamanho[0] < 700:
-        print("  ATENÇÃO: %dx%d é pequeno para a galeria. Para ficar nítido,\n"
-              "  substitua images/%s pelo arquivo original." % (tamanho[0], tamanho[1], arquivo))
+    if tamanho:
+        # o espaço da galeria tem 480x600 e a imagem é exibida inteira, então
+        # o que importa não é a largura em si, e sim se ela precisa ser AMPLIADA
+        # para caber (é a ampliação que borra). Em telas de alta densidade a
+        # exibição dobra, por isso o fator 2.
+        escala = min(480.0 / tamanho[0], 600.0 / tamanho[1]) * 2
+        if escala > 1.5:
+            print("  ATENÇÃO: %dx%d precisa ser ampliado %.1fx e vai ficar borrado.\n"
+                  "  Substitua images/%s pelo arquivo original."
+                  % (tamanho[0], tamanho[1], escala, arquivo))
+        elif escala > 1.15:
+            print("  ok: %dx%d serve bem. Em telas de alta densidade amplia %.2fx,\n"
+                  "  perda leve. Se quiser o máximo de nitidez, use o arquivo original."
+                  % (tamanho[0], tamanho[1], escala))
+        else:
+            print("  ok: %dx%d, resolução de sobra." % tamanho)
 
     caminho_html = os.path.join(RAIZ, "index.html")
     s = io.open(caminho_html, encoding="utf-8").read()
