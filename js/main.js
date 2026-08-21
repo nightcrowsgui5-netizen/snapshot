@@ -177,6 +177,16 @@ $(function() {
     e.preventDefault();
   });
   
+  // Move to specific section when click on an in-page link outside the menu
+  $('a.js-scroll').on('click', function(e) {
+    var target = $($(this).attr('href'));
+    if ( ! target.length ) return;
+    $('html, body').animate({
+      scrollTop: target.offset().top
+    }, 600);
+    e.preventDefault();
+  });
+  
   // Run the scrNav when scroll
   $(window).on('scroll', function(){
     scrNav();
