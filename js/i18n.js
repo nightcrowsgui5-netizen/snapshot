@@ -9,7 +9,6 @@
       "nav.about": "Sobre",
       "nav.services": "Serviços",
       "nav.gallery": "Galeria",
-      "nav.testimony": "Depoimentos",
       "nav.contact": "Contato",
 
       "home.subtitle": "Fotógrafo / San Francisco",
@@ -19,7 +18,7 @@
 
       "about.title": "PollyMaker é sobre imagem, conteúdo e direção criativa",
       "about.desc": "Eu acredito que uma boa imagem não precisa apenas ser bonita, ela precisa comunicar, conectar e fazer sentido para quem vê.<br><br>Na PollyMaker, cada projeto é pensado com cuidado, desde a ideia até a entrega final. Trabalho com fotografia, vídeos, branding e produção de conteúdo para marcas, profissionais e eventos que querem se apresentar com mais verdade, estética e profissionalismo.<br><br>Cada registro carrega uma intenção: valorizar momentos, fortalecer marcas e transformar ideias em conteúdo visual de qualidade.",
-      "about.counter": "Projetos entregues com propósito",
+      "about.counter": "meses de estrada no audiovisual, transformando ideias em imagem",
       "about.quote": "\"A fotografia é a única linguagem que pode ser entendida em qualquer lugar do mundo.\"",
 
       "services.title": "Imagem, Conteúdo e Direção Criativa",
@@ -58,28 +57,13 @@
       "work.tab_fotografia": "Fotografia",
       "work.cat_fotografia": "Fotografia",
 
-      "testimony.subheading": "Depoimentos",
-      "testimony.title": "O que nossos clientes dizem",
-      "testimony.desc": "A confiança de quem já trabalhou conosco é o nosso maior reconhecimento. Veja o que dizem sobre a nossa parceria.",
-      "testimony.quote": "Profissionalismo do início ao fim. As imagens superaram todas as nossas expectativas e o atendimento foi impecável. Recomendo de olhos fechados!",
-      "testimony.pos1": "CEO e Fundador — Construtora Comercial",
-      "testimony.pos2": "CEO e Fundadora — Design de Interiores",
-      "testimony.pos3": "Designer de Exteriores",
-      "testimony.pos4": "Paisagista",
-      "testimony.pos5": "Analista de Sistemas",
-
       "contact.title": "Fale Comigo",
-      "contact.desc": "Vamos conversar sobre o seu próximo projeto? Entre em contato pelos canais abaixo ou envie uma mensagem.",
-      "contact.address_title": "Endereço",
-      "contact.number_title": "Telefone",
+      "contact.desc": "Vamos conversar sobre o seu próximo projeto? Entre em contato por um dos canais abaixo.",
+      "contact.instagram_title": "Instagram",
+      "contact.number_title": "Telefone/WhatsApp",
       "contact.email_title": "E-mail",
       "contact.website_title": "Website",
 
-      "form.name": "Seu nome",
-      "form.email": "Seu e-mail",
-      "form.subject": "Assunto",
-      "form.message": "Mensagem",
-      "form.send": "Enviar Mensagem",
       "footer.copy": "Copyright &copy;2026 Todos os direitos reservados | Site desenvolvido por <a href=\"https://enterdian.com\" target=\"_blank\" rel=\"noopener\">Enterdian.com</a>"
     },
 
@@ -89,7 +73,6 @@
       "nav.about": "About",
       "nav.services": "Services",
       "nav.gallery": "Gallery",
-      "nav.testimony": "Testimony",
       "nav.contact": "Contact",
 
       "home.subtitle": "Photographer / San Francisco",
@@ -99,7 +82,7 @@
 
       "about.title": "PollyMaker is about image, content and creative direction",
       "about.desc": "I believe a good image doesn't just need to be beautiful — it needs to communicate, connect and make sense to those who see it.<br><br>At PollyMaker, every project is carefully crafted, from the idea to the final delivery. I work with photography, video, branding and content production for brands, professionals and events that want to present themselves with more authenticity, aesthetics and professionalism.<br><br>Every shot carries an intention: to value moments, strengthen brands and turn ideas into quality visual content.",
-      "about.counter": "Projects delivered with purpose",
+      "about.counter": "months in audiovisual, turning ideas into image",
       "about.quote": "\"Photography is the only language that can be understood anywhere in the world.\"",
 
       "services.title": "Image, Content and Creative Direction",
@@ -138,28 +121,13 @@
       "work.tab_fotografia": "Photography",
       "work.cat_fotografia": "Photography",
 
-      "testimony.subheading": "Testimony",
-      "testimony.title": "What our clients say",
-      "testimony.desc": "The trust of those who have worked with us is our greatest reward. See what they say about our partnership.",
-      "testimony.quote": "Professionalism from start to finish. The images exceeded all our expectations and the service was flawless. I highly recommend it!",
-      "testimony.pos1": "CEO & Founder — Commercial Construction",
-      "testimony.pos2": "CEO & Founder — Interior Design",
-      "testimony.pos3": "Exterior Designer",
-      "testimony.pos4": "Landscape Designer",
-      "testimony.pos5": "System Analyst",
-
       "contact.title": "Contact Me",
-      "contact.desc": "Let's talk about your next project? Get in touch through the channels below or send a message.",
-      "contact.address_title": "Address",
-      "contact.number_title": "Contact Number",
+      "contact.desc": "Let's talk about your next project? Get in touch through one of the channels below.",
+      "contact.instagram_title": "Instagram",
+      "contact.number_title": "Phone/WhatsApp",
       "contact.email_title": "Email Address",
       "contact.website_title": "Website",
 
-      "form.name": "Your Name",
-      "form.email": "Your Email",
-      "form.subject": "Subject",
-      "form.message": "Message",
-      "form.send": "Send Message",
       "footer.copy": "Copyright &copy;2026 All rights reserved | Website developed by <a href=\"https://enterdian.com\" target=\"_blank\" rel=\"noopener\">Enterdian.com</a>"
     }
   };
