@@ -235,6 +235,16 @@ def main():
     print('\nPronto. Item "%s" adicionado à aba %s.' % (titulo, ROTULOS[categoria][1]))
     print("Autor do post: %s" % (autor or "?"))
 
+    # O sitemap declara cada imagem da galeria uma por uma, então precisa ser
+    # regerado a cada item novo, senão a imagem nova não é declarada ao Google.
+    try:
+        import subprocess
+        subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                     "atualizar-sitemap.py")], check=True)
+    except Exception as e:
+        print("aviso: não consegui atualizar o sitemap (%s). Rode manualmente:" % e)
+        print("  python3 tools/atualizar-sitemap.py")
+
 
 if __name__ == "__main__":
     main()
