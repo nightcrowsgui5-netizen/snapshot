@@ -246,6 +246,32 @@
         line-height: 1.4;
         white-space: nowrap;
       }
+      /* ================= AJUSTES DE CELULAR (fotos apertadas) =================
+         A tela do celular e alta e estreita; a foto do hero e deitada (16:9).
+         Com "cover" na tela inteira, o navegador precisava dar um zoom enorme e
+         so sobrava um pedaco do rosto. Agora a foto ocupa uma faixa no topo com
+         altura proporcional a largura (aparece quase inteira) e some num
+         degrade para o preto, onde entram a logo e o texto. */
+      @media (max-width: 767.98px){
+        #home{ --hero-foto: min(88vw, 58vh); background-color: #000; }
+        #home .hero-slideshow{ bottom: auto; height: var(--hero-foto); }
+        #home .hero-slide{ background-position: center center; }
+        #home .hero-slideshow::after{
+          content: ''; position: absolute; left: 0; right: 0; bottom: 0;
+          height: 55%; z-index: 2; pointer-events: none;
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.7) 60%, #000 100%);
+        }
+        #home .overlay{ bottom: auto; height: var(--hero-foto); opacity: .3; }
+        #home .slider-text{ padding-top: calc(var(--hero-foto) - 40px); }
+      }
+      /* A foto vertical (9:16) da secao "sobre" ficava num quadro de 400px de
+         altura, mais largo que alto para o formato dela: o navegador cortava a
+         parte de baixo. Agora o quadro segue a proporcao da propria foto. */
+      @media (max-width: 767.98px){
+        .ftco-about .img-about .img{
+          height: calc((100vw - 30px) * 1.7778) !important;
+        }
+      }
     </style>
   </head>
   <body>
