@@ -49,10 +49,8 @@
       "work.cat_loja": "Loja",
       "work.tab_corporativo": "Corporativo",
       "work.tab_comercial": "Comercial",
-      "work.tab_socialmedia": "Social Media",
       "work.cat_corporativo": "Corporativo",
       "work.cat_comercial": "Comercial",
-      "work.cat_socialmedia": "Social Media",
       "work.tab_fotografia": "Fotografia",
       "work.cat_fotografia": "Fotografia",
 
@@ -112,10 +110,8 @@
       "work.cat_loja": "Store",
       "work.tab_corporativo": "Corporate",
       "work.tab_comercial": "Commercial",
-      "work.tab_socialmedia": "Social Media",
       "work.cat_corporativo": "Corporate",
       "work.cat_comercial": "Commercial",
-      "work.cat_socialmedia": "Social Media",
       "work.tab_fotografia": "Photography",
       "work.cat_fotografia": "Photography",
 

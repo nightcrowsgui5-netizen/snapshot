@@ -12,7 +12,7 @@ Uso:
 --vertical recorta uma imagem deitada no formato vertical da galeria, para não
            sobrar faixa preta. Aceita o ponto de corte: --vertical=700.
 
-Categorias: eventos, corporativo, comercial, socialmedia, fotografia
+Categorias: eventos, corporativo, comercial, fotografia
 
 O endereço da imagem no Instagram expira em algumas horas, por isso a imagem
 é sempre baixada e guardada no site — nunca apontamos para o Instagram.
@@ -31,7 +31,6 @@ ROTULOS = {
     "eventos": ("work.cat_evento", "Evento"),
     "corporativo": ("work.cat_corporativo", "Corporativo"),
     "comercial": ("work.cat_comercial", "Comercial"),
-    "socialmedia": ("work.cat_socialmedia", "Social Media"),
     "fotografia": ("work.cat_fotografia", "Fotografia"),
 }
 
