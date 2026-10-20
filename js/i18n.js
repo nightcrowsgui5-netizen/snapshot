@@ -13,7 +13,7 @@
 
       "home.subtitle": "Fotógrafo / San Francisco",
       "home.title": "Conteúdo &bull; Imagem &bull; Estratégia &bull; Presença",
-      "home.desc": "Produção visual para marcas, eventos e profissionais que querem se destacar com mais profissionalismo nas redes e fora delas.",
+      "home.desc": "PollyMaker: fotografia, vídeos e criação de conteúdo em Tuparetama-PE e região, para marcas, eventos e profissionais.",
       "home.btn": "Fale conosco",
 
       "about.title": "PollyMaker é sobre imagem, conteúdo e direção criativa",
@@ -74,7 +74,7 @@
 
       "home.subtitle": "Photographer / San Francisco",
       "home.title": "Content &bull; Image &bull; Strategy &bull; Presence",
-      "home.desc": "Visual production for brands, events and professionals who want to stand out with more professionalism, on social media and beyond.",
+      "home.desc": "PollyMaker: photography, video and content creation in Tuparetama, Pernambuco, Brazil, for brands, events and professionals.",
       "home.btn": "Contact us",
 
       "about.title": "PollyMaker is about image, content and creative direction",

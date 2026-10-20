@@ -238,16 +238,19 @@
       .gallery-item .model.ig-inteira{ background-color: #000; }
       .gallery-item .model.ig-inteira > img.model-img{ object-fit: contain; }
       .logo-video{
-        max-width: 480px;
-        width: 78%;
+        max-width: calc(100vw - 30px);
+        width: min(156%, 960px);
         height: auto;
-        display: inline-block;
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
         pointer-events: none;
         border: 0;
         outline: none;
       }
       @media (max-width: 767.98px){
-        .logo-video{ width: 88%; max-width: 320px; }
+        .logo-video{ width: min(176%, 640px); max-width: calc(100vw - 30px); }
       }
       /* Metodo 4: titulo em estilo "selo" (palavras-chave com separadores), sempre em 1 linha */
       #home .hero-tagline{
@@ -364,9 +367,9 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-lg-7 ftco-animate d-flex align-items-center">
           	<div class="text text-center">
-              <h1 class="logo mb-4"><video class="logo-video" autoplay muted playsinline preload="auto" poster="images/hero-1515x-poster.png"><source src="images/hero-1515x-transparent.webm" type="video/webm"></video></h1>
-		  				<h1 class="mb-4 hero-tagline" data-i18n="home.title" data-i18n-html>Conteúdo &bull; Imagem &bull; Estratégia &bull; Presença</h1>
-		  				<p class="mb-4" data-i18n="home.desc">Produção visual para marcas, eventos e profissionais que querem se destacar com mais profissionalismo nas redes e fora delas.</p>
+              <h1 class="logo mb-4"><span class="sr-only">PollyMaker — Fotografia e Vídeo em Tuparetama-PE</span><video aria-hidden="true" class="logo-video" autoplay muted playsinline preload="auto" poster="images/hero-1515x-poster.png"><source src="images/hero-1515x-transparent.webm" type="video/webm"></video></h1>
+              <p class="mb-4 hero-tagline" data-i18n="home.title" data-i18n-html>Conteúdo &bull; Imagem &bull; Estratégia &bull; Presença</p>
+              <p class="mb-4" data-i18n="home.desc">PollyMaker: fotografia, vídeos e criação de conteúdo em Tuparetama-PE e região, para marcas, eventos e profissionais.</p>
 		  				<p class="mt-5"><a href="#contact" class="btn-custom js-scroll"><span data-i18n="home.btn">Fale conosco</span> <span class="ion-ios-arrow-round-forward"></span></a></p>
             </div>
           </div>
