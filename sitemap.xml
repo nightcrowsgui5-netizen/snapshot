@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.pollymaker.com.br/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -21,6 +21,10 @@
     <image:image>
       <image:loc>https://www.pollymaker.com.br/images/ig-DXEzZn6APuDkZgEgyz1Qij2Y87Q_L7enuI8CZs0.jpg</image:loc>
       <image:title>Robson e Brenda — Evento</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.pollymaker.com.br/images/ig-DdjpHT_x9G8YGzw4AYIUaIoujLVH_cmtZWGYyg0.jpg</image:loc>
+      <image:title>1 ano da nossa moranguinho — Evento</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.pollymaker.com.br/images/ig-DbFzqezxWHq.jpg</image:loc>
